@@ -1,0 +1,69 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base styles */
+:root {
+  --color-darkBlue: #1b2543;
+  --color-charcoal: #2a262f;
+  --color-lightGreen: #d1f6ce;
+  --color-red: #e62159;
+  --color-cream: #faf5ee;
+  --color-satCream: #faeada;
+  --color-white: #fff;
+}
+
+.playfair {
+  font-family: "Playfair Display", serif;
+  font-style: normal;
+}
+
+.karla {
+  font-family: "Karla", sans-serif;
+  font-style: normal;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  line-height: 1.6;
+  color: var(--color-black);
+  background-color: var(--color-cream);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
+  color: var(--color-darkBlue);
+}
+
+h1 {
+  font-size: 40px;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-family: "Karla", sans-serif;
+  font-size: 17px;
+}
+
+p {
+  font-family: "Karla", sans-serif;
+  color: var(--color-darkBlue);
+  font-size: 15px;
+}
