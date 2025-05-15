@@ -2,6 +2,39 @@
 
 ---
 
-<div>
-  <h1>Hello world!</h1>
-</div>
+<nav>
+  <ul>
+    <li><a href="/">FIND OS</a></li>
+    <li><a href="/">KATALOG</a></li>
+  </ul>
+  <a id="logo" href="/"><img src="./src/assets/anothercloset.svg" alt="Another closet logo" /></a>
+  <ul>
+    <li><a href="/">NYHEDS BREV</a></li>
+    <li><a href="/">OM OS</a></li>
+  </ul>
+</nav>
+
+<style>
+  nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    font-family: "Karla", sans-serif;
+    font-style: normal;
+    border-bottom: 1px solid black;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    padding: 0;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+</style>
