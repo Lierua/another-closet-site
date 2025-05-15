@@ -1,0 +1,96 @@
+---
+const { data } = Astro.props;
+//console.log(data)
+---
+<a href=`/products/${data.slug}`>
+<div class="frame">
+    <div class="overflow">
+
+    {data.avaliable ? "" : 
+        <div class="black">
+            <p class="udlant">
+                Udlånt
+            </p>
+        </div>
+}
+    <img class="img" src={data.images[0]} alt="tøj fra Another Closet">
+    </div>
+    <div class="info">
+    <h2 class="name">{data.name}</h2>
+        <p>
+            Størrelse: {data.size}
+        </p>
+        <p>
+            Brand: {data.brand}
+        </p>
+    </div>
+    <p class="area">
+        Lokation: Nørrebro
+    </p>
+</div>
+</a>
+
+<style>
+
+.overflow {
+    height: 330px;
+    overflow: hidden;
+    position: relative;
+}
+.black {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    pointer-events: none;
+}
+.black p {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+.frame {
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+}
+.info {
+    padding: 0.5rem 0 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+}
+.area {
+    margin-left: auto;
+    padding: 0.5rem;
+}
+.img {
+    height: 330px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    filter: saturate(1);
+}
+
+.img:hover {
+    transform: scale(1.1);
+    filter: saturate(1.4);
+}
+
+.name {
+    font-family: "Karla", sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+.udlant {
+    font-family: "Karla", sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: var(--color-white);
+}
+</style>
