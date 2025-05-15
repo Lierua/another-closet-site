@@ -1,7 +1,6 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Card from "./Card.astro";
 
-export async function getStaticPaths() {
 const url = "https://hrxhpqduitxprhjkzzfc.supabase.co/rest/v1/clothing";
 const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhyeGhwcWR1aXR4cHJoamt6emZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcyMDk1NTAsImV4cCI6MjA2Mjc4NTU1MH0.xI1Li8DVzlUoZilPzFkc8fNfs8tw252yEGNHv-xM7nc";
 
@@ -14,20 +13,30 @@ const options = {
 const request = await fetch(url, options);
 const data = await request.json();
 
-return data.map((cloth) => {
-    return {
-        params: {slug: cloth.slug},
-        props: {cloth}
-    }
-})
-}
 
-const { cloth } = Astro.props
-console.log(cloth)
+//console.log("data", data);
 ---
+<div> 
+  <h1>
+    Collection
+  </h1>
+</div>
+<div class="grid center">
+  {
+    data.map((clothing) => {
+      return <Card data={clothing} />;
+    })
+  }
+</div>
 
-<Layout>
-   <h1>
-    {cloth.name}
-   </h1>
-</Layout>
+<style>
+      .center {
+        margin: 0 auto;
+    }
+  .grid {
+    display: grid;
+    width: 1150px;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+</style>
