@@ -1,5 +1,5 @@
 ---
-const { title, text } = Astro.props;
+const { title, text, bgImg } = Astro.props;
 ---
 
 <section class="hero">
@@ -13,15 +13,27 @@ const { title, text } = Astro.props;
   .hero {
     position: relative;
     width: 100%;
-    height: 70vh;
-    background-image: url();
+    height: 95vh;
+    background-image: url(../../public/assets/heroimg1.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   .text-box {
     position: absolute;
     left: 30px;
-    bottom: 50px;
-    width: 30vw;
+    bottom: 100px;
+    width: fit-content;
     height: fit-content;
+  }
+
+  h1 {
+    color: white;
+    font-size: 4rem;
+  }
+
+  p {
+    color: white;
   }
 </style>

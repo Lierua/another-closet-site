@@ -3,9 +3,15 @@ import Collection from "../components/Collection.astro";
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Areainfo from "../components/Areainfo.astro"
+import Intro from "../components/Intro.astro";
 ---
 
 <Layout title="Home">
-<Collection />
-<Areainfo />
-<Layout />
+  <Hero title="Dit tøj. Dit fællesskab." text="Lån, del og genopdag din garderobe med os." />
+  <Intro title="Velkommen til Another Closet" subtitle="Lån, del og genopdag din garderobe med os.">
+    <p style="margin-bottom: 0.5rem; color: var(--color-lightGreen); width: 100%;">Another Closet er mere end et sted at låne tøj — det er et fællesskab af modeelskere, der ønsker at dele stil og skabe en grønnere garderobe. Som medlem får du adgang til et bredt udvalg af tøj fra andre medlemmer, samtidig med at du bidrager til at reducere overforbrug og forlænge tøjets levetid.</p>
+    <p style="margin-bottom: 0.5rem; color: var(--color-lightGreen); width: 100%;">I vores saloner mødes vi, inspirerer hinanden og udveksler tøj med fokus på både kvalitet og fællesskab.</p>
+  </Intro>
+  <Collection />
+</Layout>
+
