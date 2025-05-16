@@ -1,0 +1,37 @@
+---
+const { title, subtitle, tag, undertag } = Astro.props;
+---
+
+<section>
+  <div class="grid1_1-5">
+    <div id="tagbox">
+      <h1>{tag}</h1>
+      <p>{undertag}</p>
+    </div>
+
+    <div id="textbox">
+      <h2>{title}</h2>
+      <h3>{subtitle}</h3>
+      <slot />
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    width: 1150px;
+  }
+
+  .grid1_1-5 {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    gap: 2px;
+  }
+  #tagbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 2rem;
+  }
+</style>

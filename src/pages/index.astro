@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Areainfo from "../components/Areainfo.astro"
 import Intro from "../components/Intro.astro";
+import Textsection from "../components/Textsection.astro";
 ---
 
 <Layout title="Home">
@@ -12,6 +13,15 @@ import Intro from "../components/Intro.astro";
     <p style="margin-bottom: 0.5rem; color: var(--color-lightGreen); width: 100%;">Another Closet er mere end et sted at låne tøj — det er et fællesskab af modeelskere, der ønsker at dele stil og skabe en grønnere garderobe. Som medlem får du adgang til et bredt udvalg af tøj fra andre medlemmer, samtidig med at du bidrager til at reducere overforbrug og forlænge tøjets levetid.</p>
     <p style="margin-bottom: 0.5rem; color: var(--color-lightGreen); width: 100%;">I vores saloner mødes vi, inspirerer hinanden og udveksler tøj med fokus på både kvalitet og fællesskab.</p>
   </Intro>
+         <Textsection title="Sådan fungerer det" subtitle="En enkel og fleksibel måde at dele garderobe på" tag="IN" undertag="Intro">
+    <p>Med et medlemskab hos Another Closet får du adgang til vores unikke tøjsaloner og fællesskab. Du låner tre stykker tøj ad gangen og bytter dem nemt ud hver måned. Alt foregår i personlige møder, hvor du også møder andre med passion for stil og bæredygtighed.</p>
+    <p>
+      Find dit tøjfællesskab. <br />
+      Tilmeld dig en tøjsalon. <br />
+      Mød op. Lån 3 stykker tøj. <br />
+      En måned senere: returner & lån nyt.
+    </p>
+  </Textsection>
   <Collection />
 </Layout>
 
