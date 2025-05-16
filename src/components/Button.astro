@@ -1,0 +1,46 @@
+---
+const { text, variant, style, link, size } = Astro.props;
+---
+
+<button onclick={`window.location.href='${link}'`} class={`${variant} ${size}`} style={style}>{text} </button>
+
+<style>
+  button {
+    border: 2px solid var(--color-red);
+    display: inline-block;
+    color: var(--color-red);
+    min-width: 5rem;
+    width: fit-content;
+    padding: 1rem 0.5rem;
+    background: none;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: "Karla", sans-serif;
+  }
+
+  .large {
+    font-size: 18px;
+    padding: 1.5rem 1rem;
+  }
+
+  .secondary {
+    background: none;
+    border: 2px solid var(--color-lightGreen);
+    color: var(--color-lightGreen);
+  }
+
+  .light {
+    color: var(--red);
+  }
+
+  .secondary:hover {
+    background-color: var(--color-lightGreen);
+    color: var(--color-white);
+  }
+
+  button:hover {
+    background-color: var(--color-red);
+    color: var(--color-white);
+  }
+</style>
