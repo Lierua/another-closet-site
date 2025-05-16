@@ -1,4 +1,6 @@
 ---
+import Hoverframe from "./Hoverframe.astro";
+import Button from "./Button.astro";
 const { title, subtitle } = Astro.props;
 ---
 
@@ -8,6 +10,7 @@ const { title, subtitle } = Astro.props;
     <h3>{subtitle}</h3>
     <slot />
   </div>
+  <Hoverframe title="Kontak os" position="center" ypos="85%" xpos="75%"><Button link="https://www.anothercloset.dk/" text="KONTAKT" /></Hoverframe>
 </section>
 
 <style>

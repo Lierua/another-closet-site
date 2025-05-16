@@ -1,0 +1,34 @@
+---
+const { title, position, xpos, ypos } = Astro.props;
+---
+
+<section style={`top:${ypos}; left:${xpos};`}>
+  <div class="txtbox">
+    <h3>{title}</h3>
+  </div>
+
+  <div class={position}>
+    <slot />
+  </div>
+</section>
+
+<style>
+  section {
+    margin: 0;
+    padding: 20px;
+    position: absolute;
+    min-width: 250px;
+    background-color: var(--color-white);
+    box-shadow: 6px 4px 1px rgba(0, 0, 0, 0.5);
+  }
+
+  .center {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+
+  .txtbox {
+    margin-bottom: 1rem;
+  }
+</style>
