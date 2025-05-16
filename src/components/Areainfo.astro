@@ -13,14 +13,14 @@ const options = {
 const request = await fetch(url, options);
 const data = await request.json();
 
-
 // console.log("data", data);
 ---
-<div> 
+
+<!-- <div> 
   <h1>
     Område
   </h1>
-</div>
+</div> -->
 <div class="grid center">
   {
     data.map((areas) => {
@@ -30,9 +30,9 @@ const data = await request.json();
 </div>
 
 <style>
-      .center {
-        margin: 0 auto;
-    }
+  .center {
+    margin: 0 auto;
+  }
   .grid {
     display: grid;
     width: 1150px;

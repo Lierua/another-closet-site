@@ -2,9 +2,10 @@
 import Collection from "../components/Collection.astro";
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
-import Areainfo from "../components/Areainfo.astro"
+import Areainfo from "../components/Areainfo.astro";
 import Intro from "../components/Intro.astro";
 import Textsection from "../components/Textsection.astro";
+import Button from "../components/Button.astro";
 ---
 
 <Layout title="Home">
@@ -13,16 +14,32 @@ import Textsection from "../components/Textsection.astro";
     <p style="margin-bottom: 0.5rem; color: var(--color-lightGreen); width: 100%;">Another Closet er mere end et sted at låne tøj — det er et fællesskab af modeelskere, der ønsker at dele stil og skabe en grønnere garderobe. Som medlem får du adgang til et bredt udvalg af tøj fra andre medlemmer, samtidig med at du bidrager til at reducere overforbrug og forlænge tøjets levetid.</p>
     <p style="margin-bottom: 0.5rem; color: var(--color-lightGreen); width: 100%;">I vores saloner mødes vi, inspirerer hinanden og udveksler tøj med fokus på både kvalitet og fællesskab.</p>
   </Intro>
-         <Textsection title="Sådan fungerer det" subtitle="En enkel og fleksibel måde at dele garderobe på" tag="IN" undertag="Intro">
-    <p>Med et medlemskab hos Another Closet får du adgang til vores unikke tøjsaloner og fællesskab. Du låner tre stykker tøj ad gangen og bytter dem nemt ud hver måned. Alt foregår i personlige møder, hvor du også møder andre med passion for stil og bæredygtighed.</p>
-    <p>
-      Find dit tøjfællesskab. <br />
-      Tilmeld dig en tøjsalon. <br />
-      Mød op. Lån 3 stykker tøj. <br />
-      En måned senere: returner & lån nyt.
-    </p>
-  </Textsection>
-  <Collection />
-  <Areainfo />
+  <div class="main-body">
+    <Textsection title="Sådan fungerer det" subtitle="En enkel og fleksibel måde at dele garderobe på" tag="IN" undertag="Intro">
+      <p style="margin-bottom: 1rem;">Med et medlemskab hos Another Closet får du adgang til vores unikke tøjsaloner og fællesskab. Du låner tre stykker tøj ad gangen og bytter dem nemt ud hver måned. Alt foregår i personlige møder, hvor du også møder andre med passion for stil og bæredygtighed.</p>
+      <p>
+        Find dit tøjfællesskab. <br />
+        Tilmeld dig en tøjsalon. <br />
+        Mød op. Lån 3 stykker tøj. <br />
+        En måned senere: returner & lån nyt.
+      </p>
+      <Button link="https://www.anothercloset.dk/" text="TILMED DIG!" style="margin-top:20px;" />
+    </Textsection>
+
+    <Textsection title="Medlemmernes favoritter" subtitle="Styles vi elsker lige nu" tag="FA" undertag="Favoritter">
+      <p>Se de mest populære og efterspurgte stykker i vores garderobe — fra ikoniske vintagefund til moderne musthaves. Måske bliver det din tur næste gang?</p>
+    </Textsection>
+
+    <Collection />
+
+    <Textsection title="Find os her" subtitle="Vores tøjsaloner" tag="OM" undertag="Områder">
+      <p>Another Closet er tilgængelig i flere byer, hvor vi samles til hyggelige tøjbyttedage. Du finder os i Fredericia, Lyngby, Roskilde og på AAU København. Kom og vær med — vi glæder os til at møde dig.</p>
+    </Textsection>
+    <Areainfo />
+    <Textsection title="Mere om Another Closet" subtitle="Hvem vi er, og hvad vi tilbyder" tag="MI" undertag="Mere Info">
+      <p>Another Closet er skabt for dem, der ønsker en mere bevidst måde at være modeinteresseret på. Udover tøjudlån tilbyder vi inspirerende events, stylingtips og workshops — og vi hjælper dig med at skabe en bæredygtig og alsidig garderobe.</p>
+    </Textsection>
+  </div>
 </Layout>
 
+<style></style>
