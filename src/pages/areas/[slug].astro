@@ -1,0 +1,33 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+const url = "https://hrxhpqduitxprhjkzzfc.supabase.co/rest/v1/areas";
+const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhyeGhwcWR1aXR4cHJoamt6emZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcyMDk1NTAsImV4cCI6MjA2Mjc4NTU1MH0.xI1Li8DVzlUoZilPzFkc8fNfs8tw252yEGNHv-xM7nc";
+
+const options = {
+  headers: {
+    apikey: key,
+  },
+};
+
+const request = await fetch(url, options);
+const data = await request.json();
+
+return data.map((area) => {
+    return {
+        params: {slug: area.slug},
+        props: {area}
+    }
+})
+}
+
+const { area } = Astro.props
+console.log(area)
+---
+
+<Layout>
+   <h1>
+    {area.name}
+   </h1>
+</Layout>
