@@ -42,6 +42,12 @@ console.log(area)
 
     </Textsection>
         <Textsection title="Showrooms og Events" subtitle=`Til Salonen:` tag="PI" undertag="Praktisk Info">
+          <div class="reletive">
+          <div class="areaboxb boxbox">
+            <h2 class="address sMargin">Lokation</h2>
+            <p class="address LMargin">{area.address[0]} <br> {area.address[1]}</p>
+          </div>
+          </div>
                 <p style="margin-bottom: 1rem;">{area.eventtext}</p>
                 <h3>Tid:</h3>
       <p>{area.time[0]}</p>
@@ -57,7 +63,31 @@ console.log(area)
 </Layout>
 
 <style>
-  .title {
+  .reletive {
+    position: relative;
+  }
+.sMargin {
+  margin-bottom: 0.6rem;
+}
+.LMargin {
+  margin-bottom: 2rem;
+}
+.areaboxb {
+  position: absolute;
+  left: 80%;
+  top: 130px;
+    width: 300px;
+    background-color: var(--color-charcoal);
+  }
+  .address {
+    text-transform: uppercase;
+    color: var(--color-lightGreen);
+    font-family: "Karla", sans-serif;
+    transform: translate(0, 20%);
+    font-weight: 500;
+    padding: 0 0 0 1rem;
+  }
+   .title {
     text-transform: uppercase;
     color: var(--color-lightGreen);
     font-family: "Karla", sans-serif;
