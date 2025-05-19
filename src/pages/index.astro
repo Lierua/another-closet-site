@@ -4,12 +4,14 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Areainfo from "../components/Areainfo.astro";
 import Intro from "../components/Intro.astro";
+import Split1 from "../components/Split1.astro";
 import Textsection from "../components/Textsection.astro";
 import Button from "../components/Button.astro";
 ---
 
 <Layout title="Home">
   <Hero title="Dit tøj. Dit fællesskab." text="Lån, del og genopdag din garderobe med os." />
+
   <Intro title="Velkommen til Another Closet" subtitle="Lån, del og genopdag din garderobe med os.">
     <p style="margin-bottom: 0.5rem; color: var(--color-lightGreen); width: 100%;">Another Closet er mere end et sted at låne tøj — det er et fællesskab af modeelskere, der ønsker at dele stil og skabe en grønnere garderobe. Som medlem får du adgang til et bredt udvalg af tøj fra andre medlemmer, samtidig med at du bidrager til at reducere overforbrug og forlænge tøjets levetid.</p>
     <p style="margin-bottom: 0.5rem; color: var(--color-lightGreen); width: 100%;">I vores saloner mødes vi, inspirerer hinanden og udveksler tøj med fokus på både kvalitet og fællesskab.</p>
@@ -25,7 +27,12 @@ import Button from "../components/Button.astro";
       </p>
       <Button link="https://www.anothercloset.dk/" text="TILMED DIG!" style="margin-top:20px;" />
     </Textsection>
-
+     <Split1
+    title="Kollektion"
+    subtitle="En enkel og fleksibel måde at dele garderobe på"
+    description="Vores kollektioner er sammensat af medlemmernes egne favoritter og spænder fra klassiske basisvarer til sæsonens trends. Der er altid noget nyt at opdage, og fordi tøjet cirkulerer, føles garderoben levende og i konstant forandring."
+    image="public/assets/acsplit.png"
+  />
     <Textsection title="Medlemmernes favoritter" subtitle="Styles vi elsker lige nu" tag="FA" undertag="Favoritter">
       <p>Se de mest populære og efterspurgte stykker i vores garderobe — fra ikoniske vintagefund til moderne musthaves. Måske bliver det din tur næste gang?</p>
     </Textsection>
