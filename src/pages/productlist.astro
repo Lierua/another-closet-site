@@ -1,5 +1,38 @@
 ---
+import Card from "../components/Card.astro";
+import Textsection from "../components/Textsection.astro";
 import Layout from "../layouts/Layout.astro";
----
+import "../styles/productlist.css";
 
-<Layout />
+---
+<script src="assets/JS/java.js" defer></script>
+
+
+<Layout title="Kollektion">
+  <div class="main-body">
+    <Textsection title="Kollektion" subtitle=`` tag="KA" undertag="Katalog">
+      <p style="margin-bottom: 1rem;">
+        Udforsk vores kollektion af tøj du kan låne igennem Another Closet.
+      </p>
+    </Textsection>
+
+    <!-- We'll inject here -->
+    <div id="clothing-list" class="grid center">
+      <p>Indlæser kollektion...</p>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .center {
+    margin: 0 auto;
+  }
+  .grid {
+    margin-top: 3rem;
+    display: grid;
+    width: 1150px;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    transform: translate(-7.5%, 0);
+  }
+</style>
