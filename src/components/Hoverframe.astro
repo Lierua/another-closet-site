@@ -1,8 +1,8 @@
 ---
-const { title, position, xpos, ypos } = Astro.props;
+const { title, position, xpos, xpos2, ypos } = Astro.props;
 ---
 
-<section style={`top:${ypos}; left:${xpos};`}>
+<section style={`top:${ypos}; left:${xpos}; right:${xpos2};`}>
   <div class="txtbox">
     <h3>{title}</h3>
   </div>

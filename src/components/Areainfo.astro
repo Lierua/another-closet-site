@@ -29,16 +29,28 @@ const data = await request.json();
   }
 </div>
 
-<style>
+<style is:global>
   .center {
     margin: 0 auto;
   }
   .grid {
     margin-top: 3rem;
     display: grid;
-    width: 1150px;
+    width: 100%;
     gap: 20px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     transform: translate(-7.5%,0);
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 1000px) {
+    .grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 </style>
