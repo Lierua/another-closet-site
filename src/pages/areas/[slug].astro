@@ -1,0 +1,116 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Textsection from "../../components/Textsection.astro";
+import Button from "../../components/Button.astro";
+import Collection from "../../components/Collection.astro";
+
+export async function getStaticPaths() {
+const url = "https://hrxhpqduitxprhjkzzfc.supabase.co/rest/v1/areas";
+const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhyeGhwcWR1aXR4cHJoamt6emZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcyMDk1NTAsImV4cCI6MjA2Mjc4NTU1MH0.xI1Li8DVzlUoZilPzFkc8fNfs8tw252yEGNHv-xM7nc";
+
+const options = {
+  headers: {
+    apikey: key,
+  },
+};
+
+const request = await fetch(url, options);
+const data = await request.json();
+
+return data.map((area) => {
+    return {
+        params: {slug: area.slug},
+        props: {area}
+    }
+})
+}
+
+const { area } = Astro.props
+console.log(area)
+---
+
+<Layout title=`${area.name}`>
+  <div class="main-body">
+    <div class="img">
+      <div class="areabox">
+        <h1 class="title">{area.name}</h1>
+      </div>
+      <img class="img1" src=`${area.images[0]}` alt="">
+    </div>
+    <Textsection title="Velkommen" subtitle=`Salon ${area.name}` tag="IN" undertag="Intro">
+      <p style="margin-bottom: 1rem;">{area.intro}</p>
+
+    </Textsection>
+        <Textsection title="Showrooms og Events" subtitle=`Til Salonen:` tag="PI" undertag="Praktisk Info">
+          <div class="reletive">
+          <div class="areaboxb boxbox">
+            <h2 class="address sMargin">Lokation</h2>
+            <p class="address LMargin">{area.address[0]} <br> {area.address[1]}</p>
+          </div>
+          </div>
+                <p style="margin-bottom: 1rem;">{area.eventtext}</p>
+                <h3>Tid:</h3>
+      <p>{area.time[0]}</p>
+      <p>{area.time[1]}</p>
+      <Button link="https://www.anothercloset.dk/" text="TILMED DIG" style="margin-top:20px;" />
+    </Textsection>
+        <Textsection title="Medlemmernes favoritter" subtitle="Styles vi elsker lige nu" tag="FA" undertag="Favoritter">
+      <p>Se de mest populære og efterspurgte stykker i vores garderobe — fra ikoniske vintagefund til moderne musthaves. Måske bliver det din tur næste gang?</p>
+    </Textsection>
+
+    <Collection />
+  </div>
+</Layout>
+
+<style>
+  .reletive {
+    position: relative;
+  }
+.sMargin {
+  margin-bottom: 0.6rem;
+}
+.LMargin {
+  margin-bottom: 2rem;
+}
+.areaboxb {
+  position: absolute;
+  left: 80%;
+  top: 130px;
+    width: 300px;
+    background-color: var(--color-charcoal);
+  }
+  .address {
+    text-transform: uppercase;
+    color: var(--color-lightGreen);
+    font-family: "Karla", sans-serif;
+    transform: translate(0, 20%);
+    font-weight: 500;
+    padding: 0 0 0 1rem;
+  }
+   .title {
+    text-transform: uppercase;
+    color: var(--color-lightGreen);
+    font-family: "Karla", sans-serif;
+    transform: translate(0, 20%);
+    font-weight: 500;
+    padding: 0 0 0 1rem;
+  }
+  .img {
+    display: grid;
+    grid-template-rows:1fr 1fr 1fr;
+    overflow: hidden;
+    height: 500px;
+  }
+  .img1 {
+    grid-row: 1/4;
+    grid-column: 1/3;
+  }
+  .areabox {
+    z-index: 1;
+    grid-row: 3/4;
+    grid-column: 1/3;
+    height: 90px;
+    width: 350px;
+    background-color: var(--color-charcoal);
+  }
+</style>

@@ -1,13 +1,16 @@
 ---
-const { title, subtitle, text } = Astro.props;
+import Hoverframe from "./Hoverframe.astro";
+import Button from "./Button.astro";
+const { title, subtitle } = Astro.props;
 ---
 
 <section>
   <div class="text-box">
     <h2>{title}</h2>
     <h3>{subtitle}</h3>
-    <p>{text}</p>
+    <slot />
   </div>
+  <Hoverframe title="Kontak os" position="center" ypos="85%" xpos="75%"><Button link="https://www.anothercloset.dk/" text="KONTAKT" /></Hoverframe>
 </section>
 
 <style>
@@ -16,32 +19,35 @@ const { title, subtitle, text } = Astro.props;
     width: 100%;
     height: 40vh;
     position: relative;
-    padding: 2rem;
   }
 
   .text-box {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 40%;
+    width: 35%;
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
   }
 
   h2 {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     color: var(--color-lightGreen);
+    width: 100%;
+    font-weight: 500;
+    font-family: "Karla", sans-serif;
   }
 
   h3 {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
     color: var(--color-lightGreen);
   }
 
-  p {
+  .text-box p {
     margin-bottom: 0.5rem;
     color: var(--color-lightGreen);
+    width: 100%;
   }
 </style>

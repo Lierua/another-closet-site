@@ -53,17 +53,38 @@ h2 {
 
 h1 {
   font-size: 40px;
+  color: var(--color-darkBlue);
 }
 h2 {
   font-size: 24px;
+  color: var(--color-darkBlue);
 }
 h3 {
   font-family: "Karla", sans-serif;
   font-size: 17px;
+  color: var(--color-darkBlue);
 }
 
 p {
   font-family: "Karla", sans-serif;
   color: var(--color-darkBlue);
-  font-size: 15px;
+  font-size: 14px;
+  margin-bottom: 0.5rem;
+}
+
+/* index */
+
+.main-body {
+  display: block;
+  margin: 0 auto;
+  max-width: 980px;
+  padding: 35px 0;
+  background-image: url(../../assets/rectangle.svg);
+  background-repeat: repeat-y;
+  background-position: left top;
+  background-size: 105px auto;
+}
+
+.boxbox {
+  box-shadow: 10px 10px 0 #2a262fb2;
 }
