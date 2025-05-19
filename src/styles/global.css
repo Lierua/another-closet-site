@@ -84,3 +84,7 @@ p {
   background-position: left top;
   background-size: 105px auto;
 }
+
+.boxbox {
+  box-shadow: 10px 10px 0 #2a262fb2;
+}
