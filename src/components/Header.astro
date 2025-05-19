@@ -3,19 +3,34 @@
 ---
 
 <nav>
-  <ul>
-    <li><a href="/">FIND OS</a></li>
-    <li><a href="/">KATALOG</a></li>
-  </ul>
-  <a id="logo" href="/"><img src="../../assets/anothercloset.svg" alt="Another closet logo" /></a>
-  <ul>
-    <li><a href="/">NYHEDS BREV</a></li>
-    <li><a href="/">OM OS</a></li>
-  </ul>
+  <a id="logo_mv" href="/"><img src="../../assets/anothercloset.svg" alt="Another closet logo" /></a>
+  <div class="menu">
+    <ul>
+      <li><a href="/">FIND OS</a></li>
+      <li><a href="/">KATALOG</a></li>
+    </ul>
+    <a id="logo" href="/"><img src="../../assets/anothercloset.svg" alt="Another closet logo" /></a>
+    <ul>
+      <li><a href="/">NYHEDS BREV</a></li>
+      <li><a href="/">OM OS</a></li>
+    </ul>
+  </div>
+
+  <div class="burger">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
 </nav>
 
 <style>
   nav {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid black;
+  }
+
+  .menu {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -24,7 +39,6 @@
     padding: 0.5rem 2rem;
     font-family: "Karla", sans-serif;
     font-style: normal;
-    border-bottom: 1px solid black;
   }
   ul {
     list-style: none;
@@ -34,7 +48,121 @@
   }
 
   a {
-    color: black;
+    color: var(--color-charcoal);
+    padding: 10px;
     text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  a:hover {
+    color: var(--color-red);
+    font-weight: 700;
+  }
+
+  .burger {
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    background: none;
+  }
+
+  .burger .line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-charcoal);
+    margin-bottom: 5px;
+    transition: 0.2s linear;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  #logo_mv {
+    display: none;
+  }
+
+  @media screen and (max-width: 800px) {
+    /****  navbar  ******/
+    .menu {
+      display: none;
+    }
+
+    nav {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 15px;
+    }
+    .burger {
+      display: block;
+    }
+
+    #logo_mv {
+      display: block;
+      width: 150px;
+      height: auto;
+    }
+
+    #logo {
+      display: none;
+    }
+
+    .burger.active .line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+      transition: 0.2s linear;
+    }
+
+    .burger.active .line:nth-child(2) {
+      opacity: 0;
+      transition: 0.15s linear;
+    }
+
+    .burger.active .line:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+      transition: 0.2s linear;
+    }
+
+    nav.active .menu {
+      display: block;
+      background-color: var(--color-charcoal);
+      color: var(--color-lightGreen);
+      position: absolute;
+      top: 40px;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    nav.active #logo_mv {
+      display: none;
+    }
+
+    nav.active .menu li {
+      margin: 10px 20px;
+    }
+
+    nav.active .menu a {
+      font-size: 24px;
+    }
   }
 </style>
+
+<script>
+  const burger = document.querySelector(".burger");
+  const nav = document.querySelector("nav");
+  const menu = document.querySelector(".menu");
+
+  burger.addEventListener("click", burgerClick);
+  function burgerClick() {
+    burger.classList.toggle("active");
+    nav.classList.toggle("active");
+  }
+  menu.addEventListener("click", menuClick);
+  function menuClick() {
+    burger.classList.remove("active");
+    nav.classList.remove("active");
+  }
+</script>

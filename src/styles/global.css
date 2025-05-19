@@ -82,5 +82,34 @@ p {
   background-image: url(../../assets/rectangle.svg);
   background-repeat: repeat-y;
   background-position: left top;
-  background-size: 105px auto;
+  background-size: 10vw auto;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 26px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 15px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  .main-body {
+    margin: 0 0.5rem 0 0.5rem;
+    background-repeat: repeat-y;
+    background-position: left top;
+    background-size: 70px auto;
+  }
+}
+
+@media (min-width: 1050px) {
+  .main-body {
+    background-size: 105px auto;
+  }
 }
