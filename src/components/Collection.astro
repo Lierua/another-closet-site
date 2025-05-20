@@ -1,7 +1,8 @@
 ---
 import Card from "./Card.astro";
 
-const url = "https://hrxhpqduitxprhjkzzfc.supabase.co/rest/v1/clothing";
+let url = "https://hrxhpqduitxprhjkzzfc.supabase.co/rest/v1/clothing?limit=8";
+
 const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhyeGhwcWR1aXR4cHJoamt6emZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcyMDk1NTAsImV4cCI6MjA2Mjc4NTU1MH0.xI1Li8DVzlUoZilPzFkc8fNfs8tw252yEGNHv-xM7nc";
 
 const options = {
@@ -12,15 +13,9 @@ const options = {
 
 const request = await fetch(url, options);
 const data = await request.json();
-
-//console.log("data", data);
+console.log(data)
 ---
 
-<!-- <div> 
-  <h1>
-    Collection
-  </h1>
-</div> -->
 <div class="grid center">
   {
     data.map((clothing) => {
@@ -39,7 +34,15 @@ const data = await request.json();
     width: 100%;
     gap: 20px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    transform: translate(-7.5%,0);
+  }
+  @media (max-width: 1350px) {
+    .grid {
+      width: 860px;
+    grid-template-columns: 1fr 1fr 1fr;
+    }
+    .center {
+      margin: 0 0;
+    }
   }
          @media screen and(min-width: 600px) and (max-width: 1000px) {
     .grid {

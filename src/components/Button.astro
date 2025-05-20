@@ -45,4 +45,9 @@ const { text, variant, style, link, size } = Astro.props;
     background-color: var(--color-red);
     color: var(--color-white);
   }
+  @media (max-width: 1080px) {
+    .span {
+      grid-column: span 4;
+    }
+  }
 </style>
