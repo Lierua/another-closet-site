@@ -16,7 +16,7 @@ const data = await request.json();
 console.log(data)
 ---
 
-<div class="grid center">
+<div class="grid2 center">
   {
     data.map((clothing) => {
       return <Card data={clothing} />;
@@ -28,7 +28,7 @@ console.log(data)
   .center {
     margin: 0 auto;
   }
-  .grid {
+  .grid2 {
     margin-top: 3rem;
     display: grid;
     width: 100%;
@@ -36,7 +36,7 @@ console.log(data)
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
  @media (max-width: 1350px) {
-    .grid {
+    .grid2 {
       width: 860px;
     grid-template-columns: 1fr 1fr 1fr;
     }
@@ -46,7 +46,7 @@ console.log(data)
   }
 
   @media (max-width: 800px) {
-    .grid {
+    .grid2 {
       width: 97%;
       grid-template-columns: 1fr 1fr;
     }
