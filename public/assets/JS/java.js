@@ -53,3 +53,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("Fejl ved hentning af data:", err);
   }
 });
+
+let isCooldown = false;
+
+function toggleBox() {
+  if (isCooldown) return;
+
+  const box = document.getElementById("myBox");
+  box.classList.toggle("open");
+
+  isCooldown = true;
+  setTimeout(() => {
+    isCooldown = false;
+  }, 500); // 1000ms = 1 second
+}
