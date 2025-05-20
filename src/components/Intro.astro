@@ -10,7 +10,9 @@ const { title, subtitle } = Astro.props;
     <h3>{subtitle}</h3>
     <slot />
   </div>
-  <Hoverframe title="Kontak os" position="center" ypos="85%" xpos="75%"><Button link="https://www.anothercloset.dk/" text="KONTAKT" /></Hoverframe>
+  <div class="visibility">
+    <Hoverframe title="Kontak os" position="center" ypos="85%" xpos2="10%"><Button link="https://www.anothercloset.dk/" text="KONTAKT" /></Hoverframe>
+  </div>
 </section>
 
 <style>
@@ -25,7 +27,7 @@ const { title, subtitle } = Astro.props;
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 35%;
+    width: 50vw;
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
@@ -49,5 +51,24 @@ const { title, subtitle } = Astro.props;
     margin-bottom: 0.5rem;
     color: var(--color-lightGreen);
     width: 100%;
+  }
+
+  @media (max-width: 600px) {
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 300px;
+    }
+
+    .text-box {
+      width: 100%;
+      padding: 5px 20px;
+    }
+
+    .visibility {
+      display: none;
+    }
   }
 </style>
