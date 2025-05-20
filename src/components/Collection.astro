@@ -24,7 +24,7 @@ console.log(data)
   }
 </div>
 
-<style is:global>
+<style>
   .center {
     margin: 0 auto;
   }
@@ -35,23 +35,23 @@ console.log(data)
     gap: 20px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-  @media (max-width: 1350px) {
+ @media (max-width: 1350px) {
     .grid {
       width: 860px;
     grid-template-columns: 1fr 1fr 1fr;
     }
     .center {
-      margin: 0 0;
-    }
-  }
-         @media screen and(min-width: 600px) and (max-width: 1000px) {
-    .grid {
-      grid-template-columns: 1fr 1fr 1fr;
+      margin: 1.5rem 0;
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media (max-width: 800px) {
     .grid {
+      width: 97%;
       grid-template-columns: 1fr 1fr;
     }
+    .center {
+      margin: 1.5 auto;
+    }
+  }
 </style>
