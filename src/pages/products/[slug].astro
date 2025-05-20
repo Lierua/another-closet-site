@@ -2,32 +2,290 @@
 import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
-const url = "https://hrxhpqduitxprhjkzzfc.supabase.co/rest/v1/clothing";
-const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhyeGhwcWR1aXR4cHJoamt6emZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcyMDk1NTAsImV4cCI6MjA2Mjc4NTU1MH0.xI1Li8DVzlUoZilPzFkc8fNfs8tw252yEGNHv-xM7nc";
+  const url = "https://hrxhpqduitxprhjkzzfc.supabase.co/rest/v1/clothing";
+  const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhyeGhwcWR1aXR4cHJoamt6emZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcyMDk1NTAsImV4cCI6MjA2Mjc4NTU1MH0.xI1Li8DVzlUoZilPzFkc8fNfs8tw252yEGNHv-xM7nc";
 
-const options = {
-  headers: {
-    apikey: key,
-  },
-};
+  const options = {
+    headers: {
+      apikey: key,
+    },
+  };
 
-const request = await fetch(url, options);
-const data = await request.json();
+  const request = await fetch(url, options);
+  const data = await request.json();
 
-return data.map((cloth) => {
+  return data.map((cloth) => {
     return {
-        params: {slug: cloth.slug},
-        props: {cloth}
-    }
-})
+      params: { slug: cloth.slug },
+      props: { cloth },
+    };
+  });
 }
 
-const { cloth } = Astro.props
-console.log(cloth)
+const { cloth } = Astro.props;
+console.log(cloth);
 ---
 
 <Layout>
-   <h1>
-    {cloth.name}
-   </h1>
+  <section>
+    <!-- <div class="carousel-case" hidden>
+      <div class="carousel">
+        <div>
+          <img src="../../../public/assets/Vertical-Placeholder-Image.webp" alt="image" />
+       </div>
+        <div>
+          <img src="../../../public/assets/Vertical-Placeholder-Image.webp" alt="image" />
+        </div>
+        <div>
+          <img src="../../../public/assets/heroimg1.webp" alt="image" />
+        </div>
+      </div> 
+      <button class="prev" onclick="prevSlide()">&#10094</button>
+      <button class="next" onclick="nextSlide()">&#10095</button>
+    </div> -->
+    <div class="img-case">
+      <div>
+        <img src="../../../public/assets/Vertical-Placeholder-Image.webp" alt="image" />
+      </div>
+      <div>
+        <img src="../../../public/assets/Vertical-Placeholder-Image.webp" alt="image" />
+      </div>
+    </div>
+
+    <div class="txt-case">
+      <div class="name-box">
+        <h2>Kjole</h2>
+        <h3>H&M</h3>
+      </div>
+
+      <div class="description-box">
+        <div class="top-box">
+          <p>Dette stykke tøj tilhører NØRREBRO</p>
+        </div>
+        <div class="bottom-box">
+          <div>
+            <ul class="tags">
+              <li>Mærke</li>
+              <li>Størrelse</li>
+              <li>Stand</li>
+              <li>Ejer</li>
+            </ul>
+          </div>
+          <div>
+            <ul class="info">
+              <li>H&M</li>
+              <li>XXL</li>
+              <li>God</li>
+              <li>Another Closet</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
+<!-- <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const carousel = document.querySelectorAll(".carousel div");
+      const carouselCase = document.querySelector(".carousel-case");
+
+      carouselCase.hidden = false;
+
+      let slideIndex = 0;
+      let intervalId = null;
+
+      function initializeSlider() {
+        if (carousel.length > 0) {
+          carousel[slideIndex].classList.add("displaySlide");
+          intervalId = setInterval(nextSlide, 5000);
+        }
+      }
+      function showSlide(index) {
+        if (index >= carousel.length) {
+          slideIndex = 0;
+        } else if (index < 0) {
+          slideIndex = carousel.length - 1;
+        }
+        carousel.forEach((element) => {
+          element.classList.remove("displaySlide");
+        });
+
+        carousel[slideIndex].classList.add("displaySlide");
+      }
+
+      function prevSlide() {
+        clearInterval(intervalId);
+        slideIndex--;
+        showSlide(slideIndex);
+      }
+
+      function nextSlide() {
+        slideIndex++;
+        showSlide(slideIndex);
+      }
+
+      initializeSlider();
+    });
+  </script> -->
+
+<style>
+  section {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 15px;
+    margin: 4rem 4rem;
+    width: 100%;
+    height: 100%;
+  }
+
+  .txt-case {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin: auto 0;
+    padding: 2rem 0 2rem 4rem;
+  }
+
+  .name-box {
+    margin-bottom: 2rem;
+  }
+
+  .img-case {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 2rem 0;
+    width: 100%;
+  }
+  .img-case div {
+    width: 300px;
+    height: auto;
+    aspect-ratio: 16 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .img-case img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .top-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 50px;
+    background-color: var(--color-white);
+    margin-bottom: 1rem;
+    border: 1px solid var(--color-charcoal);
+  }
+
+  .bottom-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    height: 370px;
+    background-color: var(--color-white);
+    padding: 1rem 2rem;
+    border: 1px solid var(--color-charcoal);
+  }
+
+  .bottom-box div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: fit-content;
+  }
+
+  li {
+    margin-bottom: 3rem;
+    list-style: none;
+  }
+
+  .info {
+    text-align: end;
+  }
+
+  /***********  carousel ***********/
+
+  /* .carousel-case[hidden] {
+      display: none;
+      position: relative;
+      width: 100%;
+      margin: auto;
+    }
+
+    .carousel div {
+      width: 100%;
+      display: none;
+    }
+
+    div.displaySlide {
+      display: block;
+    }
+
+    .carousel button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1rem;
+      padding: 10px 15px;
+      background-color: rgba(0, 0, 0, 0.503);
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .previous {
+      left: 0;
+    }
+
+    .next {
+      right: 0;
+    } */
+
+  @media (max-width: 600px) {
+    section {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .txt-case {
+      display: flex;
+      flex-direction: column;
+      margin: auto 0;
+      padding: 15px;
+    }
+
+    .img-case {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      padding: 1rem;
+      width: 100%;
+    }
+
+    .img-case div {
+      width: 150px;
+      height: auto;
+      aspect-ratio: 16 9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .top-box {
+      width: 100%;
+    }
+    .bottom-box {
+      width: 100%;
+    }
+  }
+</style>
