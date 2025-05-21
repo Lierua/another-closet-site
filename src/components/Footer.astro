@@ -1,0 +1,154 @@
+---
+
+---
+
+<footer>
+  <div class="grid1_1-3-1">
+    <div>
+      <ul>
+        <li><a href="/forside">Forside</a></li>
+        <li><a href="/saloner">Saloner</a></li>
+        <li><a href="/katalog">Katalog</a></li>
+        <li><a href="/nyhedsbrev">Nyheds brev</a></li>
+      </ul>
+    </div>
+
+    <div class="midt-logo">
+      <a id="logo" href="/"><img src="../../assets/greenlogo.svg" alt="Another closet logo" /></a>
+      <p>Sign-up for vores nyheds brev.</p>
+      <p>Vi lover at vi kun sender interessante mails</p>
+      <form>
+        <input type="email" placeholder="Email" />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+
+    <div>
+      <ul>
+        <li><a href="https://instagram.com">Instagram</a></li>
+        <li><a href="https://tiktok.com">tiktok</a></li>
+        <li><a href="https://facebook.com">facebook</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="copyright">copyright @ 2025 Another closet &nbsp; · &nbsp; Made by OOSH</div>
+</footer>
+
+<style>
+  footer {
+    background-color: #1f1c23;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 0;
+  }
+
+  @media (max-width: 600px) {
+    footer {
+      padding: 2rem 1rem;
+    }
+
+    .grid1_1-3-1 {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      width: 100%;
+      max-width: 100%;
+      padding: 0;
+    }
+
+    .grid1_1-3-1 div {
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    input[type="email"] {
+      width: 90%;
+      margin-bottom: 1rem;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    button {
+      width: 60%;
+    }
+
+    .copyright {
+      text-align: center;
+    }
+  }
+
+  .grid1_1-3-1 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    color: #d4f2cd;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  .grid1_1-3-1 div {
+    flex: 1;
+    text-align: center;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin: 0.5rem 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: #d4f2cd;
+  }
+
+  .midt-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .midt-logo img {
+    margin-bottom: 1rem;
+  }
+
+  footer p {
+    color: #d4f2cd;
+  }
+
+  form {
+    margin-top: 1rem;
+  }
+
+  input[type="email"] {
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    background-color: transparent;
+    border: 1px solid #d4f2cd;
+    color: #d4f2cd;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: 1px solid #d4f2cd;
+    color: #d4f2cd;
+  }
+
+  .copyright {
+    color: #d4f2cd;
+    font-size: 70%;
+    margin-top: 2rem;
+  }
+</style>
