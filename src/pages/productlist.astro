@@ -195,8 +195,10 @@ import "../styles/productlist.css";
 });
 
 let isCooldown = false;
+document.querySelector(".toggle-icon")?.addEventListener("mousedown",toggleBox)
 
 function toggleBox() {
+  console.log("clicked")
   if (isCooldown) return;
 
   const box = document.getElementById("myBox");
