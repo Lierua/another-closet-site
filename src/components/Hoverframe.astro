@@ -2,7 +2,7 @@
 const { title, position, xpos, xpos2, ypos } = Astro.props;
 ---
 
-<section style={`top:${ypos}; left:${xpos}; right:${xpos2};`}>
+<section class="boxbox" style={`top:${ypos}; left:${xpos}; right:${xpos2};`}>
   <div class="txtbox">
     <h3>{title}</h3>
   </div>
@@ -19,7 +19,6 @@ const { title, position, xpos, xpos2, ypos } = Astro.props;
     position: absolute;
     min-width: 250px;
     background-color: var(--color-white);
-    box-shadow: 6px 4px 1px rgba(0, 0, 0, 0.5);
   }
 
   .center {
