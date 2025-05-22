@@ -7,8 +7,6 @@ import Intro from "../components/Intro.astro";
 import Split1 from "../components/Split1.astro";
 import Split2 from "../components/Split2.astro"
 import Split3 from "../components/Split3.astro"
-import Split4 from "../components/Split4.astro"
-import Split5 from "../components/Split5.astro"
 import Textsection from "../components/Textsection.astro";
 import Button from "../components/Button.astro";
 ---
@@ -35,14 +33,15 @@ import Button from "../components/Button.astro";
     title="Kollektion"
     subtitle="En enkel og fleksibel måde at dele garderobe på"
     description="Vores kollektioner er sammensat af medlemmernes egne favoritter og spænder fra klassiske basisvarer til sæsonens trends. Der er altid noget nyt at opdage, og fordi tøjet cirkulerer, føles garderoben levende og i konstant forandring."
-    image="public/assets/acsplit.png"
-  />
+    image="/assets/acimage15.svg">
+    <Button link="/productlist" text="SER HER" variant="secondary" style="margin-top:20px; margin-left: 190px;" />
+    </Split1>
     <Textsection title="Medlemmernes favoritter" subtitle="Styles vi elsker lige nu" tag="FA" undertag="Favoritter">
       <p>Se de mest populære og efterspurgte stykker i vores garderobe — fra ikoniske vintagefund til moderne musthaves. Måske bliver det din tur næste gang?</p>
     </Textsection>
 
     <Collection />
-
+    <div  id="area"></div>
     <Textsection title="Find os her" subtitle="Vores tøjsaloner" tag="OM" undertag="Områder">
       <p>Another Closet er tilgængelig i flere byer, hvor vi samles til hyggelige tøjbyttedage. Du finder os i Fredericia, Lyngby, Roskilde og på AAU København. Kom og vær med — vi glæder os til at møde dig.</p>
     </Textsection>
@@ -55,22 +54,27 @@ import Button from "../components/Button.astro";
     title="Tøj med omtanke"
     subtitle="Bæredygtighed starter i klædeskabet"
     description="Vores kollektioner er sammensat af medlemmernes egne favoritter og spænder fra klassiske basisvarer til sæsonens trends. Der er altid noget nyt at opdage, og fordi tøjet cirkulerer, føles garderoben levende og i konstant forandring."
-  />
+    image="/assets/acsplit3.svg"
+    />
         <Split2
     title="Del stilen. Del glæden"
     subtitle="Inviter en ven: Få en måned gratis"
     description="Tag en ven med ind i Another Closet-universet! Når I begge tilmelder jer i mindst 2 måneder, får I den første måned gratis. Fordi mode og fællesskab er bedst, når det deles."
-  />
-         <Split4
+    image="/assets/placeholderImage.svg"
+    />
+    <div  id="omos"></div>
+         <Split3
     title="Om Another Closet"
     subtitle="Vi er mere end bare tøj"
     description="Another Closet er skabt for dem, der elsker mode og ønsker at tænke bæredygtigt. Vi er et fællesskab af tøjentusiaster, der bytter, deler og inspirerer hinanden - med saloner i hele landet og tøj, der fortæller historier."
-  />
-      <Split5
+    image="/assets/acsplit4.svg"
+    />
+      <Split2
     title="En del af fællesskabet"
     subtitle="Mere end bare et medlemsskab"
     description="Når du er med i Another Closet, bliver du en del af et levende fællesskab. Du møder ligesindede, udveksler stil og får adgang til unikke events og inspiration — alt sammen med tøjglæde og bæredygtighed i centrum."
-  />
+    image="/assets/acsplit5.svg"
+    />
 
   </div>
 </Layout>

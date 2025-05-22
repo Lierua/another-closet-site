@@ -1,17 +1,16 @@
 ---
+const { title, subtitle, description, image } = Astro.props;
 
 ---
 <section class="collection-section">
   <div class="content-wrapper">
     <div class="image-content">
-      <img src="/assets/placeholderImage.svg" alt="Fashion collection2" />
+      <img src=`${image}` alt="Fashion collection2" />
     </div>
     <div class="text-content">
-      <h2>Del stilen. Del glæden</h2>
-      <h3>Inviter en ven: Få en måned gratis</h3>
-      <p>
-       Tag en ven med ind i Another Closet-universet! Når I begge tilmelder jer i mindst 2 måneder, får I den første måned gratis. Fordi mode og fællesskab er bedst, når det deles.
-      </p>
+      <h2>{title}</h2>
+      <h3>{subtitle}</h3>
+      <p>{description}</p>
     </div>
   </div>
 </section>

@@ -25,7 +25,9 @@
   font-family: "Karla", sans-serif;
   font-style: normal;
 }
-
+html {
+    scroll-behavior: smooth;
+  }
 body {
   font-family: "Karla", sans-serif;
   line-height: 1.6;
