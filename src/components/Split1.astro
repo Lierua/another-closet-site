@@ -1,13 +1,32 @@
 ---
-
+/***import Split1Carousel from "../components/Split1Carousel.jsx"; **/
 ---
+
+<section class="collection-section">
+  <div class="content-wrapper">
+    <div class="text-content">
+      <h2>Kollektion</h2>
+      <h3>En enkel og fleksibel måde at dele garderobe på</h3>
+      <p>
+        Vores kollektioner er sammensat af medlemmernes egne favoritter og spænder fra klassiske basisvarer til sæsonens trends.
+        Der er altid noget nyt at opdage, og fordi tøjet cirkulerer, føles garderoben levende og i konstant forandring.
+      </p>
+    </div>
+     <!--- <div class="carousel">
+    <Split1Carousel client:load /> 
+  </div> -->
+    <div class="image-content">
+      <img src="/assets/acimage15.svg" alt="Fashion collection" />
+    </div>
+  </div>
+</section>
 
 <style>
   .collection-section {
     background-color: #2b2734;
     color: #ccffd3;
     
-        background-image: url(public/assets/greenquartercirkel.svg);
+        background-image: url(/assets/greenquartercirkel.svg);
         background-repeat: no-repeat;
   background-position: bottom center;
   background-size: 200px; 
@@ -71,21 +90,23 @@
 }
 
 
+.carousel-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 0;
+}
+.carousel-img.active {
+  opacity: 1;
+  z-index: 10;
+}
+
 
 </style>
 
-<section class="collection-section">
-  <div class="content-wrapper">
-    <div class="text-content">
-      <h2>Kollektion</h2>
-      <h3>En enkel og fleksibel måde at dele garderobe på</h3>
-      <p>
-        Vores kollektioner er sammensat af medlemmernes egne favoritter og spænder fra klassiske basisvarer til sæsonens trends.
-        Der er altid noget nyt at opdage, og fordi tøjet cirkulerer, føles garderoben levende og i konstant forandring.
-      </p>
-    </div>
-    <div class="image-content">
-      <img src="/assets/acimage15.svg" alt="Fashion collection" />
-    </div>
-  </div>
-</section>
+
