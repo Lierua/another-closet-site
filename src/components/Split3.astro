@@ -1,19 +1,17 @@
 ---
+const { title, subtitle, description, image } = Astro.props;
 
 ---
 
 <section class="collection-section">
   <div class="content-wrapper">
     <div class="text-content">
-      <h2>Tøj med omtanke</h2>
-      <h3>Bæredygtighed starter i klædeskabet</h3>
-      <p>
-        Vores kollektioner er sammensat af medlemmernes egne favoritter og spænder fra klassiske basisvarer til sæsonens trends.
-        Der er altid noget nyt at opdage, og fordi tøjet cirkulerer, føles garderoben levende og i konstant forandring.
-      </p>
+      <h2>{title}</h2>
+      <h3>{subtitle}</h3>
+      <p>{description}</p>
     </div>
     <div class="image-content">
-      <img src="/assets/acsplit3.svg" alt="acsplit3" />
+      <img src=`${image}` alt="acsplit3" />
     </div>
   </div>
 </section>
