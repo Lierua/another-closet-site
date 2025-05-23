@@ -3,6 +3,7 @@ import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 const { title } = Astro.props;
+import Backbutton from "../components/Backbutton.astro";
 ---
 
 <!doctype html>
@@ -18,10 +19,16 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <div  id="home"></div>
     <Header />
     <slot />
+    <Backbutton />
     <Footer />
   </body>
 </html>
 
-<style></style>
+<style>
+
+</style>
+
+
