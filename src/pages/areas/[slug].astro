@@ -54,6 +54,7 @@ console.log(area)
       <p>{area.time[1]}</p>
       <Button link="https://www.anothercloset.dk/" text="TILMED DIG" style="margin-top:20px;" />
     </Textsection>
+    <div class="air"></div>
         <Textsection title="Medlemmernes favoritter" subtitle="Styles vi elsker lige nu" tag="FA" undertag="Favoritter">
       <p>Se de mest populære og efterspurgte stykker i vores garderobe — fra ikoniske vintagefund til moderne musthaves. Måske bliver det din tur næste gang?</p>
     </Textsection>
@@ -63,6 +64,7 @@ console.log(area)
 </Layout>
 
 <style>
+
   .reletive {
     position: relative;
   }
@@ -112,5 +114,32 @@ console.log(area)
     height: 90px;
     width: 350px;
     background-color: var(--color-charcoal);
+  }
+
+  @media (max-width:800px) and (min-width: 600px) {
+    .areaboxb {
+      top: 295px;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .air {
+      height: 6rem;
+    }
+    h1 {
+      font-size: 40px;
+    }
+    .img1 {
+      
+  object-fit: cover;
+  align-self: stretch;
+    }
+    .areaboxb {
+      left: 0;
+    }
+  }
+  @media (max-width:600px) {
+     .areaboxb {
+      top: 240px;
+    }
   }
 </style>
