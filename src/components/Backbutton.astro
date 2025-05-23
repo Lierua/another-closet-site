@@ -1,0 +1,133 @@
+---
+
+---
+<div id="backbutton" class="hide">
+    <a href="#home" class="round-button">
+     <img class="img123" src="/assets/Line-5.svg" alt="">
+    </a>
+</div>
+
+<style>
+.img123 {
+    translate: 0 -2px;
+}
+#backbutton {
+  position: fixed;
+  z-index: 10;
+  text-align: center;
+  top: 80%;
+  left: 80%;
+}
+
+.round-button {
+  width: 60px;
+  height: 60px;
+  background: var(--color-charcoal);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.round-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.3);
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 12px solid var(--color-red);
+}
+.hide {
+  display: none;
+}
+
+.appear {
+  animation-name: appear_kf;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes appear_kf {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+.disappear {
+  animation-name: disappear_kf;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes disappear_kf {
+  0% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+</style>
+
+<script>
+  //BACK BUTTON CODE
+const back = document.querySelector("#backbutton");
+
+if (window.matchMedia("(max-width: 800px)").matches) {
+  console.log("mobil");
+} else {
+  window.addEventListener("scroll", show9);
+  console.log("desktop");
+
+  function show9() {
+    
+let timeoutId;
+    clearTimeout(timeoutId); // optional: reset previous timeout if needed
+    timeoutId = setTimeout(() => {
+      const scrollTop = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
+
+      if (scrollPercent > 20) {
+        console.log("appear");
+        back.classList.remove("hide");
+
+        back.offsetWidth; // force reflow
+        back.classList = "appear";
+      }
+
+      if (scrollPercent <= 16) {
+        console.log("disappear");
+        back.offsetWidth;
+        back.classList.add("disappear");
+        back.classList.remove("appear");
+
+        back.addEventListener("animationend", disappear);
+
+        function disappear() {
+          back.removeEventListener("animationend", disappear);
+        }
+      }
+    }, 3000);
+  }
+}
+
+</script>
