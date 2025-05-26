@@ -26,7 +26,7 @@ const { cloth } = Astro.props;
 console.log(cloth);
 ---
 
-<Layout>
+<Layout title=`${cloth.name}`>
   <div class="main-body">
     <section>
       <div class="carousel-case">
@@ -80,7 +80,7 @@ console.log(cloth);
 
         <div class="description-box">
           <div class="top-box">
-            <p>
+            <p class="p">
               Dette stykke tøj tilhører <a style="color:var(--color-red); font-weight: 700;" href={`/areas/${cloth.areaslug}`}>{cloth.area}</a>
             </p>
           </div>
@@ -148,6 +148,9 @@ console.log(cloth);
 </script>
 
 <style>
+  .p {
+    font-size: 15px;
+  }
   h2 {
     font-size: 2.5rem;
   }
