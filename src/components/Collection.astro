@@ -37,7 +37,8 @@ console.log(data);
   }
   @media (max-width: 1350px) and (min-width: 800px) {
     .grid2 {
-      width: 860px;
+      width: fit-content;
+      max-width: 980px;
       grid-template-columns: 1fr 1fr 1fr;
     }
     .center {
@@ -47,11 +48,18 @@ console.log(data);
 
   @media (max-width: 800px) {
     .grid2 {
-      width: 97%;
+      width: 100%;
       grid-template-columns: 1fr 1fr;
     }
     .center {
       margin: 1.5 auto;
+      padding: 0 10px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .grid2 {
+      gap: 10px;
     }
   }
 </style>
