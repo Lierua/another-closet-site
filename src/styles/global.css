@@ -78,14 +78,17 @@ p {
 /* index */
 
 .main-body {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
   margin: 0 auto;
+  width: 100%;
   max-width: 980px;
   padding: 35px 0;
   background-image: url(../../assets/rectangle.svg);
   background-repeat: repeat-y;
   background-position: left top;
-  background-size: 10vw auto;
+  background-size: 11vw auto;
 }
 
 /***********  carousel ***********/
@@ -135,21 +138,7 @@ div .displaySlide {
   transform: translateX(0);
 }
 
-/* .carousel-case button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
-  padding: 10px 15px;
-  color: var(--color-white);
-  background: none;
-
-  border: none;
-  border-radius: 20%;
-  cursor: pointer;
-} */
-
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   h1 {
     font-size: 26px;
   }
@@ -165,10 +154,17 @@ div .displaySlide {
   }
 
   .main-body {
-    margin: 0 0.5rem 0 0.5rem;
-    background-repeat: repeat-y;
-    background-position: left top;
-    background-size: 70px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 0 0.5rem 0 0;
+    background-size: 18vw auto;
+  }
+
+  .carousel-case {
+    width: auto;
+    height: 100%;
+    aspect-ratio: 1/1;
   }
 }
 

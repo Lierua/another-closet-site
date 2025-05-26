@@ -13,7 +13,7 @@ const options = {
 
 const request = await fetch(url, options);
 const data = await request.json();
-console.log(data)
+console.log(data);
 ---
 
 <div class="grid2 center">
@@ -35,10 +35,10 @@ console.log(data)
     gap: 20px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
- @media (max-width: 1350px) and (min-width: 800px) {
+  @media (max-width: 1350px) and (min-width: 800px) {
     .grid2 {
       width: 860px;
-    grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
     }
     .center {
       margin: 1.5rem 0;

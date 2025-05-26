@@ -1,8 +1,8 @@
 ---
-const { title, subtitle, tag, undertag } = Astro.props;
+const { title, subtitle, tag, undertag, style } = Astro.props;
 ---
 
-<section>
+<section style={style}>
   <div class="grid1_1-5">
     <div id="tagbox">
       <h2 class="tag-h2">{tag}</h2>
@@ -20,7 +20,6 @@ const { title, subtitle, tag, undertag } = Astro.props;
 <style>
   section {
     width: 80%;
-    margin: 4rem 0;
   }
 
   .grid1_1-5 {
@@ -32,6 +31,7 @@ const { title, subtitle, tag, undertag } = Astro.props;
   #tagbox {
     display: flex;
     flex-direction: column;
+    padding: 5px;
     justify-content: start;
     align-items: center;
     text-align: center;
@@ -43,7 +43,7 @@ const { title, subtitle, tag, undertag } = Astro.props;
   }
 
   .tag-h2 {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     margin: 0 auto;
   }
   h2 {
@@ -54,17 +54,30 @@ const { title, subtitle, tag, undertag } = Astro.props;
     margin-bottom: 0.3rem;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     section {
       width: 90%;
       margin: 45px 0 10px 0;
+    }
+
+    .grid1_1-5 {
+      display: grid;
+      grid-template-columns: 1fr 4fr;
     }
     #textbox {
       padding-top: 5px;
     }
 
     .tag-h2 {
-      font-size: 2.5rem;
+      font-size: 2.3rem;
+      width: 100%;
+    }
+    #tagbox {
+      width: 60px;
+    }
+
+    .grid1_1-5 {
+      gap: 5vw;
     }
   }
 </style>

@@ -5,7 +5,7 @@ const { title, text, bgImg } = Astro.props;
 <section class="hero">
   <div class="text-box">
     <h1>{title}</h1>
-    <p>{text}</p>
+    <h3>{text}</h3>
   </div>
 </section>
 
@@ -22,8 +22,10 @@ const { title, text, bgImg } = Astro.props;
 
   .text-box {
     position: absolute;
-    left: 30px;
-    bottom: 100px;
+    left: 5%;
+    bottom: 10%;
+    font-weight: 800;
+    color: var(--color-white);
     width: fit-content;
     height: fit-content;
     /* background: rgba(255, 255, 255, 0.03);
@@ -33,12 +35,14 @@ const { title, text, bgImg } = Astro.props;
   }
 
   h1 {
-    color: white;
+    color: var(--color-white);
     font-size: 4rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
   }
 
-  p {
-    color: white;
+  h3 {
+    color: var(--color-white);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
   }
 
   @media (max-width: 600px) {
