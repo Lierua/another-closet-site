@@ -25,7 +25,6 @@ const data = await request.json();
 ---
 
 <Layout title="Home">
-
   <Hero title="Dit tøj. Dit fællesskab." text="Lån, del og genopdag din garderobe med os." />
 
   <Intro title="Velkommen til Another Closet" subtitle="Lån, del og genopdag din garderobe med os.">
@@ -44,21 +43,13 @@ const data = await request.json();
       <Button link="https://www.anothercloset.dk/" text="TILMED DIG!" style="margin-top:20px;" />
     </Textsection>
 
-    <!-- <Split1
-    title="Kollektion"
-    subtitle="En enkel og fleksibel måde at dele garderobe på"
-    description="Vores kollektioner er sammensat af medlemmernes egne favoritter og spænder fra klassiske basisvarer til sæsonens trends. Der er altid noget nyt at opdage, og fordi tøjet cirkulerer, føles garderoben levende og i konstant forandring."
-    image="/assets/acimage15.svg">
-    <Button link="/productlist" text="SER HER" variant="secondary" style="margin-top:20px; margin-left: 190px;" />
-    </Split1> -->
-
     <Carouselsection title="Kollektion" subtitle="En enkel og fleksibel måde at dele garderobe på" description="Vores kollektioner er sammensat af medlemmernes egne favoritter og spænder fra klassiske basisvarer til sæsonens trends. Der er altid noget nyt at opdage, og fordi tøjet cirkulerer, føles garderoben levende og i konstant forandring.">
       <div class="carousel">
         {
           data.map((item) => {
             return (
               <div>
-                <img src={item.images} alt="image" />
+                <img src={item.images[0]} alt={`billede af ${data.name}`} />
               </div>
             );
           })
@@ -105,12 +96,6 @@ const data = await request.json();
 
       carousel[slideIndex].classList.add("displaySlide");
     }
-
-    // function prevSlide() {
-    //   clearInterval(intervalId);
-    //   slideIndex--;
-    //   showSlide(slideIndex);
-    // }
 
     function nextSlide() {
       slideIndex++;
