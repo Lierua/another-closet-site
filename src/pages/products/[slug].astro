@@ -30,6 +30,15 @@ console.log(cloth);
   <div class="main-body">
     <section>
       <div class="carousel-case">
+        {
+      cloth.avaliable ? (
+        ""
+      ) : (
+        <div class="black">
+          <p class="udlant">Udlånt</p>
+        </div>
+      )
+    }
         <div class="carousel">
           {
             cloth.images.map((image) => {
@@ -120,6 +129,28 @@ console.log(cloth);
 </script>
 
 <style>
+  
+  .black {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    pointer-events: none;
+  }
+  .black p {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+  .udlant {
+    font-family: "Karla", sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: var(--color-white);
+  }
   .p {
     font-size: 15px;
   }
